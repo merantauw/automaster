@@ -5,13 +5,17 @@
 @import "libs";
 
 .header {
+  height: 100vh;
   color: #fff;
-  background: url(../images/header-bg.jpg) center no-repeat;
+  background: url(../images/header-bg.jpg) center/cover;
   padding: 30px 0 75px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   &__top-inner {
     max-width: 1200px;
     padding: 0 15px;
-    margin: 0 auto 75px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -24,8 +28,9 @@
     max-width: 200px;
   }
   &__title {
+    padding-bottom: 15%;
     max-width: 850px;
-    margin: 0 auto 50px;
+    margin: 0 auto;
     font-size: 32px;
     text-align: center;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -94,6 +99,7 @@
   color: #fff;
   background: url(../images/services-bg.jpg);
   &__list {
+    position: relative;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -102,6 +108,58 @@
     max-width: 306px;
     width: 100%;
     margin-bottom: 50px;
+  }
+  &__item:hover{
+    border: 1px solid #fff;
+    cursor: pointer;
+    .services__subtitle{
+      color: #33a6e7;
+      background-color: #fff;
+    }
+  }
+  &__hover {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    top: -10%;
+    background-color: #33a6e7;
+    background-color: rgba(0,0,0,0.9);
+    border: 1px solid;
+    
+    transform: scale(0);
+    transition: transform 0.2s ease-in;
+  }
+  &__hover.active{
+    display: flex;
+    transform: scale(1);
+    transition: transform 0.2s ease-out;
+  }
+  &__hover.active .services__item{
+    pointer-events: none;
+  }
+  &__hover-box {
+    width: 100%;
+    padding: 20px;
+  }
+  &__hover-box li {
+    display: flex;
+    justify-content: space-between;
+    line-height: 1;
+    margin-bottom: 20px;
+    span:first-child {
+      flex: 1;
+      border-bottom: 2px dotted #fff;
+    }
+  }
+  &__hover-inner{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    padding: 20px 20px 0;
+  }
+  &__hover-text{
+    width: 70%;
   }
   &__subtitle {
     padding: 30px 0;
@@ -123,7 +181,7 @@
     }
   }
   &__item {
-    margin-bottom: 25px;
+    margin-bottom: 40px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.7);
   }
   &__question {
@@ -141,16 +199,20 @@
       height: 25px;
       transition: transform 0.4s;
     }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  &__answer {
+    display: none;
+    font-size: 22px;
+    margin-bottom: 10px;
   }
   &__question.active {
     &:after {
       transform: rotate(180deg);
       transition: transform 0.4s;
     }
-  }
-  &__answer {
-    font-size: 22px;
-    margin-bottom: 10px;
   }
 }
 
@@ -195,10 +257,10 @@
 
 .map {
   padding: 0;
-  &__inner{
+  &__inner {
     position: relative;
   }
-  &__text{
+  &__text {
     padding: 15px;
     position: absolute;
     top: 40%;
@@ -207,31 +269,31 @@
   }
 }
 
-.footer{
+.footer {
   padding: 90px 0;
   background: url(../images/header-bg.jpg) center/cover;
   color: #fff;
-  &__list{
+  &__list {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  &__item{
+  &__item {
     font-size: 20px;
     font-weight: 700;
-    span{
+    span {
       display: block;
       margin-bottom: 15px;
     }
-    a{
+    a {
       display: inline-block;
       margin-bottom: 15px;
     }
-    &:first-child{
+    &:first-child {
       max-width: 400px;
       width: 100%;
     }
-    &:last-child{
+    &:last-child {
       max-width: 300px;
       width: 100%;
     }
