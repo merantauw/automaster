@@ -13,4 +13,7 @@ $(function () {
   $('.services__item').on('click', function () {
     $('.services__hover').toggleClass('active');
   })
+
+  //плавный скролл
+  
 })

@@ -63,6 +63,16 @@
   &__content-price:before {
     background: url(../images/price.png) no-repeat;
   }
+  &__btn{
+    position: fixed;
+    padding: 20px;
+    bottom: 5%;
+    right: 5%;
+    transform: rotate(180deg);
+    background-color: #fff;
+    border-radius: 50%;
+    border: 1px solid #000;
+  }
 }
 
 .about {
